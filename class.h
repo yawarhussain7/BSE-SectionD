@@ -12,6 +12,7 @@ void showteacherlist();
 
 typedef struct Students
 {
+    int id;
     char name[30];
     char reg[20];
     char section[10];

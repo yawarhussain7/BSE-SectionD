@@ -101,6 +101,7 @@ void addnewstudents()
 
     for (int i = 0; i < size; i++)
     {
+      
         printf("\n\t Enter the name of Student : ");
         scanf("%s",bse[i].name);
         printf("\n\t Enter the Registration number of student : ");
@@ -109,12 +110,14 @@ void addnewstudents()
         scanf("%s", bse[i].section);
         printf("\n\t Enter the CGPA of the Student : ");
         scanf("%f",&bse[i].cgpa);
+          printf("\n\t Enter the ID of the Student : ");
+        scanf("%d",&bse[i].id);
     }
 
-    // fprintf(write, "%s\t\t\t\t%s\t\t\t\t%s\t\t\t%s\n", "Name", "Registration", "Section","CGPA");
+    // fprintf(write, "%s\t\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%s\n","ID", "Name", "Registration", "Section","CGPA");
     for (int i = 0; i < size; i++)
     {
-    fprintf(write, "%s\t\t\t%s\t\t\t%s\t\t\t%0.2f\n",bse[i].name,bse[i].reg,bse[i].section,bse[i].cgpa);
+    fprintf(write, "%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%0.2f\n",bse[i].id,bse[i].name,bse[i].reg,bse[i].section,bse[i].cgpa);
     }
 
     fclose(write);

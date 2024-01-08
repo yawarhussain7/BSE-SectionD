@@ -1,7 +1,12 @@
 #include<stdio.h>
+#include<stdlib.h>
 #include"class.h"
 int main()
 {
- showteacherlist();
+
+
+
+printf("End");
+
  return 0;
 }

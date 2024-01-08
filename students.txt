@@ -1,4 +1,5 @@
-Name			        Registration			Section			CGPA
-Yawar_Hussain			SP23-BSE-122			BSE-2D			3.07
-Abdur_Rahman			SP23-BSE-123			BSE-2D			3.40
-Syed_Hassam_Jan			SP23-BSE-121			BSE-2B			3.04
+
+ID				Name			    Registration			Section			CGPA
+121			Syed_Hassam_Jan			SP23-BSE-121			BSE-2B			3.04
+122			Yawar_Hussain			SP23-BSE-122			BSE-2D			3.07
+123			Abdur_Rahman			SP23-BSE-123			BSE-2C			3.40
