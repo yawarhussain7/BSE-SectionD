@@ -1,0 +1,6 @@
+Name			            Subject				        CreditHours
+Fuzail_Jamil			Programming_Fundamental					4
+Dr_Shahid_Khan			Applied_Physics					4
+Mevish_Sabir			Software_Engineering					3
+Nusrullah_Khan			Pakistan_Studies					3
+Shoaib_Sultan			Automata					3
