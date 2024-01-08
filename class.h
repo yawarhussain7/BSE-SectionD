@@ -3,6 +3,7 @@ typedef struct teachers
     char name[30];
     char subject[30];
     int credithours;
+    int id;
 } t;
 
 
