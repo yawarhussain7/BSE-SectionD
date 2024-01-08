@@ -17,7 +17,13 @@ typedef struct Students
     char reg[20];
     char section[10];
     float cgpa;
-
+   
+        float PF;
+        float SE;
+        float PS;
+        float AP;
+        float GPA;
+  
 }s;
 int studentmeanu();
 void showstudentlist();

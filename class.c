@@ -140,3 +140,17 @@ void showstudentlist()
     }
     fclose(read);
 }
+
+// subject detail
+void subjects()
+{
+    FILE *write = fopen("subjects.txt","w");
+    if(write == NULL)
+    {
+        puts("ERROR");
+    }
+    int size;
+    printf("Enter the total number of subjects : ");
+    scanf("%d",&size);
+    
+}
