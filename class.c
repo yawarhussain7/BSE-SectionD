@@ -58,12 +58,14 @@ void getdateforteacher()
         scanf("%s", teach[i].subject);
         printf("\n\t Enter the Credit Hourse of Course : ");
         scanf("%d", &teach[i].credithours);
+            printf("\n\t Enter the ID of the Student : ");
+        scanf("%d",&teach[i].id);
     }
 
-    // fprintf(write, "%s\t\t\t%s\t\t\t\t\t\t%s\n", "Name", "Subject", "CreditHours");
+    // fprintf(write, "%s\t\t%s\t\t\t\t\t%s\t\t\t\t\t%s\n","ID", "Name", "Subject", "CreditHours");
     for (int i = 0; i < size; i++)
     {
-        fprintf(write, "%s\t\t\t%s\t\t\t\t\t%d\n", teach[i].name, teach[i].subject, teach[i].credithours);
+        fprintf(write, "%d\t\t%s\t\t\t%s\t\t\t\t%d\n",teach[i].id, teach[i].name, teach[i].subject, teach[i].credithours);
     }
 
     fclose(write);
