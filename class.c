@@ -10,7 +10,8 @@ int teahermanu()
     printf("\n\t <<<<<<<< Teacher OPeration >>>>>>>>>>\n");
     printf("\n\t 1-> Press for add teacher \n");
     printf("\n\t 2-> Press for Show teacher list\n");
-    printf("\n\t 3-> Press for Exit\n");
+    printf("\n\t 3-> Press for Search Teacher \n");
+    printf("\n\t 4-> Press for Exit\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
@@ -71,6 +72,44 @@ void getdateforteacher()
     fclose(write);
 }
 
+//search teaher 
+void searchteacher()
+{
+    FILE *read;
+    read = fopen("teacher.txt","r");
+    if (read == NULL)
+    {
+        puts("ERROR \n ");
+    }
+    
+    t teach;
+    int id;
+    printf("Enter the id of user : ");
+    scanf("%d",&id);
+    int found = 0;
+    while (fscanf(read,"%d %s %s %s %0.2f",&teach.id,teach.name,teach.subject,&teach.credithours))
+    {
+        if (teach.id == id)
+        {
+            printf("ID : %d\n",id);
+            printf("Name : %s\n",teach.name);
+            printf("SUbject : %s\n",teach.subject);
+            printf("CreditHours: %d\n",teach.credithours);
+            
+            found = 1;
+            break;
+        }
+
+    }
+
+    if (found != 1)
+    {
+        printf("Account not foound \n");
+    }
+    
+    fclose(read);
+} 
+
 // student meanu 
 int studentmeanu()
 {
@@ -79,7 +118,8 @@ int studentmeanu()
     printf("\n\t <======= Students OPeration ========>\n");
     printf("\n\t 1-> Press for add student \n");
     printf("\n\t 2-> Press for Show show list\n");
-    printf("\n\t 3-> Press for Exit\n");
+    printf("\n\t 3-> Press for search student \n");
+    printf("\n\t 4-> Press for Exit\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
@@ -142,6 +182,45 @@ void showstudentlist()
     }
     fclose(read);
 }
+
+// search particular student 
+void search()
+{
+    FILE *read = fopen("s.txt","r");
+    if (read == NULL)
+    {
+        puts("ERROR \n ");
+    }
+    
+    s bse;
+    int id;
+    printf("Enter the id of user : ");
+    scanf("%d",&id);
+    int found = 0;
+    while (fscanf(read,"%d %s %s %s %0.2f",&bse.id,bse.name,bse.reg,bse.section,&bse.GPA))
+    {
+        if (bse.id == id)
+        {
+            printf("ID : %d\n",id);
+            printf("Name : %s\n",bse.name);
+            printf("Registration no : %s\n",bse.reg);
+            printf("Section : %s\n",bse.section);
+            printf("GPA : %0.1f\n",bse.GPA);
+            found = 1;
+            break;
+        }
+
+    }
+
+    if (found != 1)
+    {
+        printf("Account not foound \n");
+    }
+    
+    fclose(read);
+}   
+
+
 
 // subject detail
 void subjects()

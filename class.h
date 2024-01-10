@@ -6,7 +6,7 @@ typedef struct teachers
     int id;
 } t;
 
-
+void searchteacher();
 int teahermanu();
 void getdateforteacher();
 void showteacherlist();
@@ -29,3 +29,4 @@ typedef struct Students
 int studentmeanu();
 void showstudentlist();
 void addnewstudents();
+void search();
