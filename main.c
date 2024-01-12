@@ -6,7 +6,7 @@ int main()
     int opt;
     while (opt != 3)
     {
-       
+
         printf("\n\t <<<<<<<<< Welcome to BSE 2D Section >>>>>>>>>>>\n");
         printf("\n\t 1-> Press for Show teacher List \n");
         printf("\n\t 2-> Press for Show Students List \n");
@@ -19,17 +19,23 @@ int main()
             int teachers = teahermanu();
             if (teachers == 1)
             {
-                system("cls");
+                system("clear");
                 getdateforteacher();
             }
             else if (teachers == 2)
             {
-                system("cls");
+                system("clear");
                 showteacherlist();
             }
-            else if (teachers ==3)
+            else if (teachers == 3)
             {
-                 searchteacher();
+                system("clear");
+                searchteacher();
+            }
+            else if (teachers == 4)
+            {
+                system("clear");
+                updateteach();
             }
             else
             {
@@ -38,19 +44,19 @@ int main()
             break;
         case 2:
             int result = studentmeanu();
-             if (result == 1)
+            if (result == 1)
             {
-                system("cls");
+                system("clear");
                 addnewstudents();
             }
             else if (result == 2)
             {
-                system("cls");
+                system("clear");
                 showstudentlist();
             }
             else if (result == 3)
             {
-                system("cls");
+                system("clear");
                 search();
             }
             else
@@ -68,7 +74,6 @@ int main()
             break;
         }
     }
-    
 
     return 0;
 }
