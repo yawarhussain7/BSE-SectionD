@@ -7,12 +7,12 @@ int main()
     while (opt != 3)
     {
 
-        printf("\n\t <<<<< Welcome to BSE 2D Section >>>>\n");
-        printf("\n\t|____________________________________|\n");
-        printf("\n\t| 1-> Press for Show teacher List    |\n");
-        printf("\n\t| 2-> Press for Show Students List   |\n");
-        printf("\n\t| 3-> Press for Exit                 |\n");
-        printf("\n\t|____________________________________|\n");
+        printf("\n\t <<<<<< Welcome to BSE 2D Section >>>>>>\n");
+        printf("\n\t|_______________________________________|\n");
+        printf("\n\t| 1-> Press for Show teacher Account    |\n");
+        printf("\n\t| 2-> Press for Show Students Account   |\n");
+        printf("\n\t| 3-> Press for Exit                    |\n");
+        printf("\n\t|_______________________________________|\n");
         printf("CHooice ... ");
         scanf("%d", &opt);
         switch (opt)
