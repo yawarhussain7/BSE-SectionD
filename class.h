@@ -11,7 +11,7 @@ void getdateforteacher();
 void showteacherlist();
 void searchteacher();
 void updateteach();
-
+void DeleteTeacher();
 
 
 
@@ -36,3 +36,4 @@ int studentmeanu();
 void showstudentlist();
 void addnewstudents();
 void search();
+void removeStudents();

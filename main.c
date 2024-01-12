@@ -37,6 +37,12 @@ int main()
                 system("clear");
                 updateteach();
             }
+            else if (teachers == 5)
+            {
+                system("clear");
+                DeleteTeacher();
+            }
+            
             else
             {
                 exit(0);
@@ -59,6 +65,11 @@ int main()
                 system("clear");
                 search();
             }
+            else if (result == 4)
+            {
+                removeStudents();
+            }
+            
             else
             {
                 exit(0);

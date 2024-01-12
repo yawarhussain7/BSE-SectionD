@@ -8,11 +8,12 @@ int teahermanu()
     system("cls");
     int opt;
     printf("\n\t <<<<<<<< Teacher OPeration >>>>>>>>>>\n");
-    printf("\n\t 1-> Press for add teacher \n");
+    printf("\n\t 1-> Press for Add teacher \n");
     printf("\n\t 2-> Press for Show teacher list\n");
     printf("\n\t 3-> Press for Search Teacher \n");
     printf("\n\t 4-> Press for Update Teacher \n");
-    printf("\n\t 5-> Press for Exit\n");
+    printf("\n\t 5-> Press for Remove Teacher \n");
+    printf("\n\t 6-> Press for Exit\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
@@ -111,7 +112,7 @@ void searchteacher()
 
     fclose(read);
 }
-//UPgrade Teacher
+// UPgrade Teacher
 void updateteach()
 {
     FILE *read, *write;
@@ -130,7 +131,7 @@ void updateteach()
     fflush(stdin);
     scanf("%d", &id);
     int opt = 0;
-    while (fscanf(read, "%d %s %s %d", &teach.id, teach.name, teach.subject, &teach.credithours)!=EOF)
+    while (fscanf(read, "%d %s %s %d", &teach.id, teach.name, teach.subject, &teach.credithours) != EOF)
     {
         newtech = teach;
         if (teach.id == id)
@@ -149,36 +150,36 @@ void updateteach()
                 printf("\n\t Enter your new ID : ");
                 fflush(stdin);
                 scanf("%d", &newtech.id);
-              
+
                 break;
             case 2:
                 printf("\n\t Enter your New Name : ");
                 fflush(stdin);
                 scanf("%s", newtech.name);
-                
+
                 break;
             case 3:
                 printf("\n\t Enter your New Subject : ");
                 fflush(stdin);
                 scanf("%s", newtech.subject);
-               
+
                 break;
             case 4:
                 printf("\n\t Enter your New Subject Credit Hours : ");
                 fflush(stdin);
                 scanf("%d", &newtech.credithours);
-              
+
                 break;
             default:
                 printf("\n\t Invalid option\n");
                 break;
             }
-            fprintf(write,"%d\t\t%s\t\t\t%s\t\t\t\t%d\n",newtech.id,newtech.name,newtech.subject,newtech.credithours);
+            fprintf(write, "%d\t\t%s\t\t\t%s\t\t\t\t%d\n", newtech.id, newtech.name, newtech.subject, newtech.credithours);
         }
         else
         {
 
-        fprintf(write,"%d\t\t%s\t\t\t%s\t\t\t\t%d\n",newtech.id,newtech.name,newtech.subject,newtech.credithours);
+            fprintf(write, "%d\t\t%s\t\t\t%s\t\t\t\t%d\n", newtech.id, newtech.name, newtech.subject, newtech.credithours);
         }
     }
 
@@ -189,16 +190,45 @@ void updateteach()
     rename("newTeacher.txt", "teacher.txt");
 }
 
-//Delete Teacher
+// Delete Teacher
+void DeleteTeacher()
+{
+    FILE *read, *write;
 
+    read = fopen("teacher.txt", "r");
+    if (read == NULL)
+    {
+        puts("ERROR File does't Open \n");
+    }
 
+    write = fopen("newteacher.txt", "a");
+    if (write == NULL)
+        ;
+    {
+        puts("ERROR DeleteTeacher \n");
+    }
 
+    int id;
+    printf("\n\t Enter the ID of teacher that you want to delete : ");
+    scanf("%d", &id);
 
+    t old, new;
 
+    while (fscanf(read, "%d %s %s %d", &old.id, old.name, old.subject, &old.credithours) != EOF)
+    {
+        new = old;
+        if (old.id != id)
+        {
+            fprintf(write, "%d\t\t%s\t\t\t%s\t\t\t\t%d\n", new.id, new.name, new.subject, new.credithours);
+        }
+    }
 
+    fclose(read);
+    fclose(write);
 
-
-
+    remove("teacher.txt");
+    rename("newteacher.txt", "teacher.txt");
+}
 
 // student meanu
 int studentmeanu()
@@ -209,7 +239,8 @@ int studentmeanu()
     printf("\n\t 1-> Press for add student \n");
     printf("\n\t 2-> Press for Show show list\n");
     printf("\n\t 3-> Press for search student \n");
-    printf("\n\t 4-> Press for Exit\n");
+    printf("\n\t 4-> Press for Remove student \n");
+    printf("\n\t 5-> Press for Exit\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
@@ -288,8 +319,9 @@ void search()
     scanf("%d", &id);
     int found = 0;
 
-    while (fscanf(read, "%d %s %s %s %0.1f", &student.id, student.name, student.reg, student.section, &student.GPA))
+    while (fscanf(read, "%d %s %s %s %f", &student.id, student.name, student.reg, student.section, &student.GPA) != EOF)
     {
+
         if (student.id == id)
         {
             printf("ID : %d\n", student.id);
@@ -310,15 +342,42 @@ void search()
     fclose(read);
 }
 
-// subject detail
-void subjects()
+// Remove Students
+void removeStudents()
 {
-    FILE *write = fopen("subjects.txt", "w");
+    FILE *read, *write;
+
+    read = fopen("students.txt", "r");
+    if (read == NULL)
+    {
+        puts("ERROR\n RemoveStudent \n");
+    }
+
+    write = fopen("newstudent.txt", "a");
     if (write == NULL)
     {
-        puts("ERROR");
+        puts("ERROR \n Remove student write file ");
     }
-    int size;
-    printf("Enter the total number of subjects : ");
-    scanf("%d", &size);
+
+    s old, new;
+    int id;
+    printf("\n\t Enter the ID of student that you want to remove : ");
+    scanf("%d", &id);
+
+    while (fscanf(read, "%d %s %s %s %f", &old.id, old.name, old.reg, old.section, &old.GPA)!=EOF)
+    {
+        new = old;
+        if (old.id != id)
+        {
+            fprintf(write, "%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%f\n", new.id, new.name, new.reg, new.section, new.GPA);
+        }
+     
+     
+    }
+
+    fclose(read);
+    fclose(write);
+
+    remove("students.txt");
+    rename("newstudent.txt","students.txt");
 }
