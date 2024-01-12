@@ -7,13 +7,15 @@ int teahermanu()
 {
     system("cls");
     int opt;
-    printf("\n\t <<<<<<<< Teacher OPeration >>>>>>>>>>\n");
-    printf("\n\t 1-> Press for Add teacher \n");
-    printf("\n\t 2-> Press for Show teacher list\n");
-    printf("\n\t 3-> Press for Search Teacher \n");
-    printf("\n\t 4-> Press for Update Teacher \n");
-    printf("\n\t 5-> Press for Remove Teacher \n");
-    printf("\n\t 6-> Press for Exit\n");
+    printf("\n\t <<<<<<<<<< Teacher OPeration >>>>>>>>>>\n");
+    printf("\n\t|_______________________________________|\n");
+    printf("\n\t| 1-> Press for Add teacher             |\n");
+    printf("\n\t| 2-> Press for Show teacher list       |\n");
+    printf("\n\t| 3-> Press for Search Teacher          |\n");
+    printf("\n\t| 4-> Press for Update Teacher          |\n");
+    printf("\n\t| 5-> Press for Remove Teacher          |\n");
+    printf("\n\t| 6-> Press for Exit                    |\n");
+    printf("\n\t|_______________________________________|\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
@@ -235,13 +237,15 @@ int studentmeanu()
 {
     system("cls");
     int opt;
-    printf("\n\t <======= Students OPeration ========>\n");
-    printf("\n\t 1-> Press for add student \n");
-    printf("\n\t 2-> Press for Show show list\n");
-    printf("\n\t 3-> Press for search student \n");
-    printf("\n\t 4-> Press for Remove student \n");
-    printf("\n\t 5-> Press for Update student \n");
-    printf("\n\t 6-> Press for Exit\n");
+    printf("\n\t <====== Students OPeration =====>\n");
+    printf("\n\t|________________________________|\n");
+    printf("\n\t| 1-> Press for add student      |\n");
+    printf("\n\t| 2-> Press for Show show list   |\n");
+    printf("\n\t| 3-> Press for search student   |\n");
+    printf("\n\t| 4-> Press for Remove student   |\n");
+    printf("\n\t| 5-> Press for Update student   |\n");
+    printf("\n\t| 6-> Press for Exit             |\n");
+    printf("\n\t|________________________________|\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
