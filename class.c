@@ -277,7 +277,7 @@ void addnewstudents()
         printf("\n\t Enter the Section of Student : ");
         scanf("%s", bse[i].section);
         printf("\n\t Enter the CGPA of the Student : ");
-        scanf("%f", &bse[i].cgpa);
+        scanf("%f", &bse[i].GPA);
         printf("\n\t Enter the ID of the Student : ");
         scanf("%d", &bse[i].id);
     }
@@ -285,7 +285,7 @@ void addnewstudents()
     // fprintf(write, "%s\t\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%s\n","ID", "Name", "Registration", "Section","CGPA");
     for (int i = 0; i < size; i++)
     {
-        fprintf(write, "%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%0.2f\n", bse[i].id, bse[i].name, bse[i].reg, bse[i].section, bse[i].cgpa);
+        fprintf(write, "%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%0.2f\n", bse[i].id, bse[i].name, bse[i].reg, bse[i].section, bse[i].GPA);
     }
 
     fclose(write);
@@ -408,7 +408,7 @@ void updateStudent()
     printf("\n\t Enter the id of the student that you want to update :  ");
     scanf("%d",&id);
     int opt;
-    while (fscanf(read,"%d %s %s %s %f",&stu1.id,stu1.name,stu1.reg,stu1.section,stu1.GPA)!= EOF)
+    while (fscanf(read,"%d %s %s %s %f",&stu1.id,stu1.name,stu1.reg,stu1.section,&stu1.GPA)!= EOF)
     {
         stu2  = stu1;
        if (stu1.id ==  id)
@@ -450,11 +450,11 @@ void updateStudent()
                 break;
             }
 
-            fprintf(write,"%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%f\n",stu2.id,stu2.name,stu2.reg,stu2.section,stu2.GPA);
+            fprintf(write,"%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%0.2f\n",stu2.id,stu2.name,stu2.reg,stu2.section,stu2.GPA);
        }
        else
        {
-            fprintf(write,"%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%f\n",stu2.id,stu2.name,stu2.reg,stu2.section,stu2.GPA);
+            fprintf(write,"%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%0.2f\n",stu2.id,stu2.name,stu2.reg,stu2.section,stu2.GPA);
 
        }
        
