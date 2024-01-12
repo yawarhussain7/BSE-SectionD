@@ -67,9 +67,14 @@ int main()
             }
             else if (result == 4)
             {
+                system("clear");
                 removeStudents();
             }
-            
+            else if(result == 5)
+            {
+                system("clear");
+                updateStudent();
+            }
             else
             {
                 exit(0);

@@ -240,7 +240,8 @@ int studentmeanu()
     printf("\n\t 2-> Press for Show show list\n");
     printf("\n\t 3-> Press for search student \n");
     printf("\n\t 4-> Press for Remove student \n");
-    printf("\n\t 5-> Press for Exit\n");
+    printf("\n\t 5-> Press for Update student \n");
+    printf("\n\t 6-> Press for Exit\n");
     printf("CHooice... ");
     scanf("%d", &opt);
 
@@ -381,3 +382,87 @@ void removeStudents()
     remove("students.txt");
     rename("newstudent.txt","students.txt");
 }
+
+void updateStudent()
+{
+    FILE *read,*write;
+
+    read = fopen("students.txt","r");
+    if (read == NULL)
+    {
+        puts("ERROR\n Update student read file ");
+    }
+
+    write = fopen("newstudents.txt","a");
+    if (write == NULL)
+    {
+        puts("ERROR\n update student write file ");
+    }
+    
+    s stu1,stu2;
+    int id;
+    printf("\n\t Enter the id of the student that you want to update :  ");
+    scanf("%d",&id);
+    int opt;
+    while (fscanf(read,"%d %s %s %s %f",&stu1.id,stu1.name,stu1.reg,stu1.section,stu1.GPA)!= EOF)
+    {
+        stu2  = stu1;
+       if (stu1.id ==  id)
+       {
+            printf("\n\t <<<<<<<<< Update Student Information >>>>>>>>>>>>>\n");
+            printf("\n\t 1 => Press for new update Student ID  \n");
+            printf("\n\t 2 => Press for new Student Name  \n");
+            printf("\n\t 3 => Press for new Student Registration no  \n");
+            printf("\n\t 4 => Press for new Student Section  \n");
+            printf("\n\t 5 => Press for new Student GPA  \n");
+            printf("Chooice ....");
+            scanf("%d",&opt);
+            printf("\n");
+
+            switch (opt)
+            {
+            case 1:
+                printf("\n\t Enter your New Student ID : ");
+                scanf("%d",&stu2.id);
+                break;
+            case 2:
+                printf("\n\t Enter your New Student Name : ");
+                scanf("%s",stu2.name);
+                break;
+            case 3:
+                printf("\n\t Enter your New Registration Number : ");
+                scanf("%s",stu2.reg);
+                break;
+            case 4:
+                printf("\n\t Enter your New Section : ");
+                scanf("%s",stu2.section);
+                break;
+            case 5:
+                printf("\n\t Enter your new GPA : ");
+                scanf("%f",&stu2.GPA);
+                break;
+            default:
+                printf("\n\t Invalid Operation \n");
+                break;
+            }
+
+            fprintf(write,"%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%f\n",stu2.id,stu2.name,stu2.reg,stu2.section,stu2.GPA);
+       }
+       else
+       {
+            fprintf(write,"%d\t\t\t%s\t\t\t%s\t\t\t%s\t\t\t%f\n",stu2.id,stu2.name,stu2.reg,stu2.section,stu2.GPA);
+
+       }
+       
+    }
+    
+    fclose(read);
+    fclose(write);
+
+    remove("students.txt");
+    rename("newstudents.txt","students.txt");
+        
+
+}
+
+

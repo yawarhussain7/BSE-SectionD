@@ -37,3 +37,4 @@ void showstudentlist();
 void addnewstudents();
 void search();
 void removeStudents();
+void updateStudent();
