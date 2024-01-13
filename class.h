@@ -16,7 +16,6 @@ void DeleteTeacher();
 
 
 
-
 typedef struct Students
 {
     int id;
@@ -24,6 +23,7 @@ typedef struct Students
     char reg[20];
     char section[10];
     float GPA;
+    
  
 }s;
 int studentmeanu();
@@ -32,3 +32,6 @@ void addnewstudents();
 void search();
 void removeStudents();
 void updateStudent();
+
+
+
